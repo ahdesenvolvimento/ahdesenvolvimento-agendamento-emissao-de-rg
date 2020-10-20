@@ -1,0 +1,39 @@
+{% extends 'base_index.html' %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h4>Dados do agendamento</h4>
+            <p>Nome: {{agendamento.nome}}</p>
+
+            <p>CPF: {{agendamento.cpf}}</p>
+
+            <p>RG: {{agendamento.rg}}</p>
+
+            <p>Telefone: {{agendamento.telefone}}</p>
+
+            <p>endereco: {{agendamento.endereco}}</p>
+        </div>
+        <div class="col-12">
+            <form method="POST" action="">
+                <input id="data_agendamento" class="border" name="data_agendamento" value="{{agendamento.data.data}}">
+            </form>
+        </div>
+        <div class="col-12">
+            <form method="POST" action="">
+                {% csrf_token %}
+                <label for="">Selecione a nova data</label>
+                <select class="form-control" name="data" id="">
+                    {% for data in datas %}
+                    <option value="{{data.codigo}}">{{data.data}}</option>
+                    {% endfor %}
+                </select>
+                 <button type="submit" class="btn btn-success">Selecionar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,188 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+    {% if request.user.is_authenticated %}
+        {% if request.user.is_superuser %}
+            <div class="header">
+                <div class="row">
+                    <div class="col-6">
+                        <h1><a href="{% url 'administracao_ssp' %}">SAPERG</a></h1>
+                    </div>
+                    <div class="coL-6">
+                        <nav class="navbar navbar-expand-lg">
+                            <button data-toggle="collapse" type="button" data-target="#collapse" class="navbar-toggler">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="collapse">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link cor" href="{% url 'logout' %}">Logout</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h3>Bem vindo a administração do sistema</h3>
+                    </div>
+                    <div class="col-12">
+                        <a href="{% url 'funcionarios' %}" class="btn btn-success">Visualizar funcionários</a>
+                        <button data-toggle="modal" data-target="#modalCadastro" class="btn btn-success">Cadastrar funcionário</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" data-toggle="modal" id="modalCadastro">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6>Cadastro de funcionários</h6>
+                            <button type="button" data-dismiss="modal" class="close"><span>&times;</span></button>
+                        </div>
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <div class="modal-body">
+
+                                <div class="form-group">
+                                    <label for="username" class="col-form-label">Username</label>
+                                    <input type="text" class="form-control" name="username" id="username">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cpf" class="col-form-label">CPF</label>
+                                    <input type="text" class="form-control" name="cpf" id="cpf">
+                                </div>
+                                <div class="form-group">
+                                    <label for="rg" class="col-form-label">RG</label>
+                                    <input type="text" class="form-control" name="rg" id="rg">
+                                </div>
+                                <div class="form-group">
+                                    <label for="telefone" class="col-form-label">Telefone</label>
+                                    <input type="text" class="form-control" name="telefone" id="telefone">
+                                </div>
+                                <div class="form-group">
+                                    <label for="endereco" class="col-form-label">Endereço</label>
+                                    <input type="text" class="form-control" name="endereco" id="endereco">
+                                </div>
+                                <div class="form-group">
+                                    <label for="first_name" class="col-form-label">Primeiro Nome</label>
+                                    <input type="text" class="form-control" name="first_name" id="first_name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="last_name" class="col-form-label">Ultimo Nome</label>
+                                    <input type="text" class="form-control" name="last_name" id="last_name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="col-form-label">Senha</label>
+                                    <input type="password" class="form-control" name="password" id="password">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-success" type="submit">Cadastrar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" data-toggle="modal" id="modalDesativar">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6>Deseja realmente desativar o funcionário?</h6>
+                            <button type="button" data-dismiss="modal" class="close"><span>&times;</span></button>
+                        </div>
+                        <div class="modal-body">
+                            <button>Sim</button>
+                            <button>Não</button>
+                        </div>
+                        <div class="modal-footer">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" data-toggle="modal" id="modalExcluir">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6>Deseja realmente excluir o funcionário?</h6>
+                            <button type="button" data-dismiss="modal" class="close"><span>&times;</span></button>
+                        </div>
+                        <div class="modal-body">
+                            <button>Sim</button>
+                            <button>Não</button>
+                        </div>
+                        <div class="modal-footer">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" data-toggle="modal" id="modalAtivar">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6>Deseja realmente ativar o funcionário?</h6>
+                            <button type="button" data-dismiss="modal" class="close"><span>&times;</span></button>
+                        </div>
+                        <div class="modal-body">
+                            <button>Sim</button>
+                            <button>Não</button>
+                        </div>
+                        <div class="modal-footer">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+        <div class="header">
+            <div class="row">
+                <div class="col-6">
+                    <h1><a href="{% url 'administracao' %}">SAPERG</a></h1>
+                </div>
+                <div class="coL-6">
+                    <nav class="navbar navbar-expand-lg">
+                        <button data-toggle="collapse" type="button" data-target="#collapse" class="navbar-toggler">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="collapse">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link cor" href="{% url 'logout' %}">Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Você não tem autorização para acessar esta página</h1>
+                </div>
+            </div>
+        </div>
+            
+        {% endif %}
+    {% else %}
+        <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

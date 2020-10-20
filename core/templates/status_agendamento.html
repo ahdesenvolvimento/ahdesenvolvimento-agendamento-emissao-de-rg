@@ -1,0 +1,47 @@
+{% extends 'base_index.html' %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3>Status do agendamento</h3>
+            </div>
+            <div class="col-12">
+                {% for i in agendamento %}
+                    <a class="btn btn-success" href="{% url 'alterar_agendamento' i.codigo_exibicao%}">Alterar agendamento</a>
+                {% endfor %}
+                <button class="btn btn-success" data-toggle="modal" data-target="#modalExcluirAgendamento">Excluir agendamento</button>
+            </div>
+            <div class="col-12">
+                {% for i in agendamento %}
+                    <p>Código do agendamento: {{i.codigo_exibicao}}</p>
+                    <p>Quem agendou: {{i.nome}}</p>
+                    <p>Status: {{i.status}}</p>
+                    <p>Data: {{i.data.data}}</p>
+                    <p>Período: <strong>Inicio: {{i.data.hora_inicio}}/ Fim: {{i.data.hora_termino}}</strong></p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" data-toggle="modal" id="modalExcluirAgendamento">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6>Deseja realmente excluir o agendamento?</h6>
+                    <button type="button" data-dismiss="modal" class="close"><span>&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        {% for i in agendamento %}
+                            <div class="col-12 ajustar">
+                                <a href="{% url 'deletar_agendamento' i.codigo_exibicao %}" class="btn btn-success">Sim</a>
+                                <button class="btn btn-success" data-dismiss="modal">Não</button>
+                            </div>
+                         {% endfor %}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

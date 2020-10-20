@@ -1,0 +1,51 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+    <div class="header">
+        <div class="row">
+            <div class="col-12">
+                <h1><a href="{% url 'index' %}">SAPERG</a></h1>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h4>Login</h4>
+            </div>
+            <div class="col-12">
+                <form method="post" action="">
+                    {% csrf_token %}
+                    <label for="username">Username</label>
+                    <input class="form-control" type="text" name="username" id="username">
+                    <label for="username">Senha</label>
+                    <input class="form-control" type="password" id="password" name="password">
+                    <button type="submit" class="btn btn-success">Logar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer fixed-bottom">
+        <div class="row">
+            <div class="col-12">
+                <span>
+                    <small>
+                        Desenvolvido por Antônio Henrique - IFPI
+                    </small>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

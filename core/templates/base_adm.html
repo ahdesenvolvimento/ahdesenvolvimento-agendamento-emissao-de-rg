@@ -1,0 +1,136 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+    {% if request.user.is_authenticated %}
+        {% if request.user.is_superuser %}
+            <div class="header">
+                <div class="row">
+                    <div class="col-6">
+                        <h1><a href="{% url 'administracao' %}">SAPERG<a/></h1>
+                    </div>
+                    <div class="coL-6">
+                        <nav class="navbar navbar-expand-lg">
+                            <button data-toggle="collapse" type="button" data-target="#collapse" class="navbar-toggler">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="collapse">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item cor">
+                                        <a href="{% url 'logout' %}" class="nav-link cor">Logout</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1>Você não pode acessar esta página</h1>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        {% else %}
+            <div class="header">
+                <div class="row">
+                    <div class="col-6">
+                        <h1><a href="{% url 'administracao' %}">SAPERG<a/></h1>
+                    </div>
+                    <div class="coL-6">
+                        <nav class="navbar navbar-expand-lg">
+                            <button data-toggle="collapse" type="button" data-target="#collapse" class="navbar-toggler">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="collapse">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item cor">
+                                        <a href="{% url 'agendamento_adm' %}" class="nav-link cor">Agendamento</a>
+                                    </li>
+                                    <li class="nav-item cor">
+                                        <a href="{% url 'data_periodos' %}" class="nav-link cor">Datas e períodos</a>
+                                    </li>
+                                    <li class="nav-item cor">
+                                        <a class="nav-link cor" href="{% url 'perfil' request.user.username %}">Perfil</a>
+                                    </li>
+                                    <li class="nav-item cor">
+                                        <a class="nav-link cor" href="{% url 'projeto' %}">Sobre o projeto</a>
+                                    </li>
+                                    <li class="nav-item cor">
+                                        <a href="{% url 'logout' %}" class="nav-link cor">Logout</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            {% block content %}
+
+            {% endblock %}
+            <div class="footer fixed-bottom">
+                <div class="row">
+                    <div class="col-12">
+                        <span>
+                            <small>
+                                Desenvolvido por Antônio Henrique - IFPI
+                            </small>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" data-toggle="modal" id="modalAlterar">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6>Alterar dados</h6>
+                            <button type="button" data-dismiss="modal" class="close"><span>&times;</span></button>
+                        </div>
+                        <form action="" method="POST">
+                            <div class="modal-body">
+
+                                <div class="form-group">
+                                    <label for="" class="col-form-label">Nome</label>
+                                    <input type="text" class="form-control" name="" id="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-form-label">CPF</label>
+                                    <input type="text" class="form-control" name="" id="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-form-label">RG</label>
+                                    <input type="text" class="form-control" name="" id="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-form-label">Telefone</label>
+                                    <input type="text" class="form-control" name="" id="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-form-label">Endereço</label>
+                                    <input type="text" class="form-control" name="" id="">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-success" type="submit">Alterar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+        {% endif %}
+    {% endif %}
+    
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/validacoes_adm.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

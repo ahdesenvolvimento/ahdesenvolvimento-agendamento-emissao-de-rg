@@ -1,0 +1,66 @@
+{% extends 'base_adm.html' %}
+{% block content %}
+<div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3>Agendamentos do dia</h3>
+            </div>
+            <div class="col-12">
+                {% for i in agendamento %}
+                    <div class="border">                    <p>Código do agendamento: {{i.codigo_exibicao}}</p>
+                        <p>Nome: {{i.nome}}</p>
+                        <p>CPF: {{i.cpf}}</p>
+                        <p>RG: {{i.rg}}</p>
+                        <p>Telefone: {{i.telefone}}</p>
+                        <p>Endereço: {{i.endereco}}</p>
+                        <a class="btn btn-success" href="{% url 'confirmar' i.codigo %}">Confirmar</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" data-toggle="modal" id="modalAgendamento">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6>Realizar agendamento</h6>
+                    <button type="button" data-dismiss="modal" class="close"><span>&times;</span></button>
+                </div>
+                <div class="modal-body">
+
+                    <form action="" method="POST">
+                        <div class="form-group">
+                            <label for="" class="col-form-label">Nome</label>
+                            <input type="text" class="form-control" name="" id="">
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-form-label">CPF</label>
+                            <input type="text" class="form-control" name="" id="">
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-form-label">RG</label>
+                            <input type="text" class="form-control" name="" id="">
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-form-label">Telefone</label>
+                            <input type="text" class="form-control" name="" id="">
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-form-label">Endereço</label>
+                            <input type="text" class="form-control" name="" id="">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Datas disponíveis</label>
+                            <select name="" id="" class="form-control">
+                                <option value="1">10/01/2019</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success" type="submit">Agendar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

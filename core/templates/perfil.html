@@ -1,0 +1,18 @@
+{% extends 'base_adm.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h3>Dados do usuário</h3>
+        </div>
+        <div class="col-12">
+            <p>Nome: {{usuario.get_full_name}}</p>
+            <p>CPF: {{usuario.cpf}}</p>
+            <p>RG: {{usuario.rg}}</p>
+            <p>Telefone: {{usuario.telefone}}</p>
+            <p>endereco: {{usuario.endereco}}</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

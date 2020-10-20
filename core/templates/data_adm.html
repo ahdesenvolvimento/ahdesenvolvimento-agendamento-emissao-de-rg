@@ -1,0 +1,107 @@
+{% extends 'base_adm.html' %}
+{% block content %}
+<div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3>Datas cadastradas</h3>
+            </div>
+            <div class="col-12">
+                <button data-toggle="modal" type="button" class="btn btn-success" data-target="#modalData">Criar data</button>
+            </div>
+            <div class="col-12">
+                {% for data in datas %}
+                    <div class="border">
+                        <p data-toggle="modal" data-target="#modalAgendamento">{{data.data}}</p>
+                        <p>Início: {{data.hora_inicio}}</p>
+                        <p>Término: {{data.hora_termino}}</p>
+                        <p>Vagas: {{data.quantidade}}</p>
+                        <a class="btn btn-success" href="{% url 'excluir_data' data.codigo %}">Excluir</a>
+                        <a class="btn btn-success" href="{% url 'alterar_data' data.codigo%}">Alterar data</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" data-toggle="modal" id="modalExcluir">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6>Cadastro de datas</h6>
+                    <button type="button" data-dismiss="modal" class="close"><span>&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <button>Sim</button>
+                    <button>Não</button>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success" type="submit">Cadastrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" data-toggle="modal" id="modalAlterar">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6>Alterar data</h6>
+                    <button type="button" data-dismiss="modal" class="close"><span>&times;</span></button>
+                </div>
+                <div class="modal-body">
+
+                    <form action="" method="POST">
+                        <div class="form-group">
+                            <label for="" class="col-form-label">Hora início</label>
+                            <input type="time" class="form-control" name="" id="">
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-form-label">Hora termino</label>
+                            <input type="time" class="form-control" name="" id="">
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-form-label">Quantidade de vagas</label>
+                            <input type="number" class="form-control" name="" id="">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success" type="submit">Cadastrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" data-toggle="modal" id="modalData">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6>Cadastro de datas</h6>
+                    <button type="button" data-dismiss="modal" class="close"><span>&times;</span></button>
+                </div>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="data" class="col-form-label">Data</label>
+                            <input type="date" class="form-control" name="data" id="data">
+                        </div>
+                        <div class="form-group">
+                            <label for="hora_inicio" class="col-form-label">Hora início</label>
+                            <input type="time" class="form-control" name="hora_inicio" id="hora_inicio">
+                        </div>
+                        <div class="form-group">
+                            <label for="hora_termino" class="col-form-label">Hora termino</label>
+                            <input type="time" class="form-control" name="hora_termino" id="hora_termino">
+                        </div>
+                        <div class="form-group">
+                            <label for="quantidade" class="col-form-label">Quantidade de vagas</label>
+                            <input type="number" class="form-control" name="quantidade" id="quantidade">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-success" type="submit">Cadastrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
