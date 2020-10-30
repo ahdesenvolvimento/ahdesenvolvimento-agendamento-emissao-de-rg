@@ -1,16 +1,16 @@
 # ahdesenvolvimento-agendamento-emissao-de-rg
 
--Descrição
+- Descrição
 Devido à demora e à dificuldade que algumas pessoas tem de tirar seu RG (principalmente as que moram em locais situados longe de postos de emissão), esse projeto tem como objetivo 
 apresentar uma solução que reduza o tempo desse processo, por meio de um site de agendamento de atendimentos.
 
--Público alvo
+- Público alvo
 Qualquer pessoa que deseje fazer a emissão do documento
 
--Problema a ser resolvido
+- Problema a ser resolvido
 Permitir que cidadões possam agendar atedimentos para evitar deslocamento desnecessário a SSP
 
--Funcionalidades básicas que o sistema deveria contemplar
+- Funcionalidades básicas que o sistema deveria contemplar
 1. Realizar agendamento
 2. Confirmar agendamento
 3. Visualizar agendamentos do dia
