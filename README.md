@@ -61,7 +61,9 @@ apresentar uma solução que reduza o tempo desse processo, por meio de um site 
 1. [1]	"Conheça todos os postos para emitir 1ª e 2ª via do RG e evite filas em Teresina",
 https://www.oitomeia.com.br/noticias/2019/01/21/conheca-todos-os-postos-para-emitir-1a-e2a-via-do-rg-e-evite-filas-em-teresina/, Acessado em 25/02/2019.
 
-2.[2]	Kenneth Laudon Jane Laudon, "Sistemas de Informação Gerenciais", Pearson Companion Website, 1991.
-3.[3]	Luiz Eduardo Borges, "Python para Desenvolvedores", novatec, 2014.
-4.[4]	Minetto Elton Luís. "Frameworks para Desenvolvimento em PHP", novatec, 2007.
+2. [2]	Kenneth Laudon Jane Laudon, "Sistemas de Informação Gerenciais", Pearson Companion Website, 1991.
+
+3. [3]	Luiz Eduardo Borges, "Python para Desenvolvedores", novatec, 2014.
+
+4. [4]	Minetto Elton Luís. "Frameworks para Desenvolvimento em PHP", novatec, 2007.
 
