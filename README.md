@@ -41,3 +41,27 @@ apresentar uma solução que reduza o tempo desse processo, por meio de um site 
 4.	Metodologia Scrum
 - A abordagem Scrum(SCHWABER, 2004; SCHWABER e BEEDLE, 2001) é um método ágil geral, mas seu foco está no gerenciamento do desenvolvimento iterativo, ao invés das abordagens técnicas específicas da engenharia de software ágil. Consiste em um projeto que será divido em fases, os sprints, do qual dentro de cada fase será executada uma etapa do projeto.
 
+## Ojetivo geral
+- Apresentar uma proposta de site de agendamento de atendimentos, com o propósito de agilizar o processo de emissão de RG e diminuir sua burocracia.
+
+## Ojetivos específicos
+- Aumentar o número de atendimentos diários
+- Maior praticidade na execução da rotina
+- Gerar satisfação dos usuários
+
+## Metodologia de execução do projeto
+- Levantamento de requisitos
+- Modelagem do banco de dados
+- Para construção do site, será utilizado o SGBD PostgreSQL, com auxilio do pgAdmin e as ferramentas de desenvolvimento web serão o HTML, CSS (Bootstrap), JavaScript e Django.
+
+## Resultados esperados e disseminação dos resultados
+-Após a conclusão do projeto, espera-se que ocorra um aumento na velocidade de emissão do RG e do número de pessoas atendidas em postos de emissão por dia, além de uma satisfação por parte dos que utilizaram o site. Em relação à divulgação, pode ser feita por meio de propagandas e panfletos.
+
+## Referências
+1. [1]	"Conheça todos os postos para emitir 1ª e 2ª via do RG e evite filas em Teresina",
+https://www.oitomeia.com.br/noticias/2019/01/21/conheca-todos-os-postos-para-emitir-1a-e2a-via-do-rg-e-evite-filas-em-teresina/, Acessado em 25/02/2019.
+
+2.[2]	Kenneth Laudon Jane Laudon, "Sistemas de Informação Gerenciais", Pearson Companion Website, 1991.
+3.[3]	Luiz Eduardo Borges, "Python para Desenvolvedores", novatec, 2014.
+4.[4]	Minetto Elton Luís. "Frameworks para Desenvolvimento em PHP", novatec, 2007.
+
