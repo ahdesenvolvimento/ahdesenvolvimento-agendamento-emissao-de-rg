@@ -57,6 +57,9 @@ apresentar uma solução que reduza o tempo desse processo, por meio de um site 
 ## Resultados esperados e disseminação dos resultados
 -Após a conclusão do projeto, espera-se que ocorra um aumento na velocidade de emissão do RG e do número de pessoas atendidas em postos de emissão por dia, além de uma satisfação por parte dos que utilizaram o site. Em relação à divulgação, pode ser feita por meio de propagandas e panfletos.
 
+## Acompanhamento e Avaliação do Projeto Durante a Execução
+- O projeto foi divido, primeiramente, em cinco sprints, com duração em torno de uma semana, cada, sendo avaliado diretamente pelo professor Ely por relatórios e pela própria equipe durante todo o projeto, por meio de reuniões.
+
 ## Referências
 1. [1]	"Conheça todos os postos para emitir 1ª e 2ª via do RG e evite filas em Teresina",
 https://www.oitomeia.com.br/noticias/2019/01/21/conheca-todos-os-postos-para-emitir-1a-e2a-via-do-rg-e-evite-filas-em-teresina/, Acessado em 25/02/2019.
